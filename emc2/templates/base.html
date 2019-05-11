@@ -18,8 +18,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 {{ render_nav_item('index', 'Home', use_li=True) }}
-		{{ render_nav_item('info', 'Info', use_li=True) }}
+		{{ render_nav_item('prepare', 'Prepare', use_li=True) }}
 		{{ render_nav_item('services', 'Services', use_li=True) }}
+                {{ render_nav_item('business', 'Business', use_li=True) }}
+                {{ render_nav_item('community', 'Community', use_li=True) }}
+
+
 	
                 
             </ul>
@@ -28,7 +32,7 @@
     {% block content %}{% endblock %}
     <footer class="text-center">
         {% block footer %}
-            <small> &copy; 2019 <a href="http://greyli.com" title="E=MC2">E=MC2</a>
+            <small> &copy; 2019 <a href="http://artctrl.me:5000" title="E=MC2">E=MC2</a>
             </small>
         {% endblock %}
     </footer>

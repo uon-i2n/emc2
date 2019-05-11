@@ -30,39 +30,19 @@ class Message(db.Model):
 def index():
     return render_template('index.html')
 
-@app.route('/info', methods=['GET', 'POST'])
-def info():
-    return render_template('info.html')
+@app.route('/prepare', methods=['GET', 'POST'])
+def prepare():
+    return render_template('prepare.html')
 
 @app.route('/services', methods=['GET', 'POST'])
 def services():
     return render_template('services.html')
 
-@app.route('/form', methods=['GET', 'POST'])
-def test_form():
-    form = HelloForm()
-    return render_template('form.html', form=form)
+@app.route('/community', methods=['GET', 'POST'])
+def community():
+    return render_template('community.html')
 
+@app.route('/business', methods=['GET', 'POST'])
+def business():
+    return render_template('business.html')
 
-@app.route('/nav', methods=['GET', 'POST'])
-def test_nav():
-    return render_template('nav.html')
-
-
-@app.route('/pagination', methods=['GET', 'POST'])
-def test_pagination():
-    db.drop_all()
-    db.create_all()
-    for i in range(100):
-        m = Message()
-        db.session.add(m)
-    db.session.commit()
-    page = request.args.get('page', 1, type=int)
-    pagination = Message.query.paginate(page, per_page=10)
-    messages = pagination.items
-    return render_template('pagination.html', pagination=pagination, messages=messages)
-
-
-@app.route('/utils', methods=['GET', 'POST'])
-def test_utils():
-    return render_template('utils.html')
